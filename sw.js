@@ -4,7 +4,7 @@ var URLS = '.';
 
 const NOT_FOUND_CACHE_FILES = '/404.html';
 const CACHE_NAME = 'CACHE_OFFLINE_WEBAPP';
-const OFFLINE_URL = '/';
+const OFFLINE_URL = '/*';
 const NOT_FOUND_URL = '/404.html';
 
 self.addEventListener('fetch', function(event) {

@@ -259,8 +259,8 @@ workbox.routing.registerRoute(
 
 self.addEventListener('install', function(event) {
   event.waitUntil(
-    caches.open('CACHE').then(function(cache) {
-      return cache.addAll([
+    caches.open('CACHE_NAME').then(function(cache) {
+      return CACHE_NAME.addAll([
         '/',
         '/CSS/',
         '/FONT/',

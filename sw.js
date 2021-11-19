@@ -37,7 +37,7 @@ importScripts('/JS/workbox-sw.js');
 const CACHE = "CACHE_OFFLINE_WEBAPP";
 
 // TODO: replace the following with the correct offline fallback page i.e.: const offlineFallbackPage = "/offline/";
-const offlineFallbackPage = ".";
+const offlineFallbackPage = "/";
 
 self.addEventListener("message", (event) => {
   if (event.data && event.data.type === "SKIP_WAITING") {
@@ -93,7 +93,7 @@ const bgSyncPlugin = new workbox.backgroundSync.BackgroundSyncPlugin(QUEUE_NAME,
 });
 
 workbox.routing.registerRoute(
-  new RegExp('/'),
+  new RegExp('.'),
   new workbox.strategies.StaleWhileRevalidate({
     cacheName: CACHE,
     plugins: [
@@ -112,7 +112,7 @@ self.addEventListener("message", (event) => {
 });
 
 workbox.routing.registerRoute(
-  new RegExp('/'),
+  new RegExp('.'),
   new workbox.strategies.CacheFirst({
     cacheName: CACHE
   })

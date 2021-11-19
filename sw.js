@@ -254,3 +254,24 @@ workbox.routing.registerRoute(
     ],
   }),
 );
+
+// This is try in firefox service worker
+
+self.addEventListener('install', function(event) {
+  event.waitUntil(
+    caches.open('CACHE').then(function(cache) {
+      return cache.addAll([
+        '/',
+        '/CSS/',
+        '/FONT/',
+        '/HTML/',
+        '/IMG/',
+        '/JQUERY/',
+        '/JS/',
+        '/SOUND/',
+        '/offline/',
+        '/icons/'
+      ]);
+    })
+  );
+});

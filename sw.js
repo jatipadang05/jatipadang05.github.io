@@ -4,7 +4,7 @@ var URLS = '.';
 
 const NOT_FOUND_CACHE_FILES = '/404.html';
 const CACHE_NAME = 'CACHE_OFFLINE_WEBAPP';
-const OFFLINE_URL = '/*';
+const OFFLINE_URL = '/';
 const NOT_FOUND_URL = '/404.html';
 
 self.addEventListener('fetch', function(event) {
@@ -93,7 +93,7 @@ const bgSyncPlugin = new workbox.backgroundSync.BackgroundSyncPlugin(QUEUE_NAME,
 });
 
 workbox.routing.registerRoute(
-  new RegExp('/*'),
+  new RegExp('/'),
   new workbox.strategies.StaleWhileRevalidate({
     cacheName: CACHE,
     plugins: [
@@ -112,7 +112,7 @@ self.addEventListener("message", (event) => {
 });
 
 workbox.routing.registerRoute(
-  new RegExp('/*'),
+  new RegExp('/'),
   new workbox.strategies.CacheFirst({
     cacheName: CACHE
   })

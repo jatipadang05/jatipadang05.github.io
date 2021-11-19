@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Offline</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#3f51b5">
+    <link rel="manifest" href="/WebAppJp05/manifest.json">
+<style>
+@media screen and (max-width: 950px) {  
+  body {background-size: cover;}
+  }
+  
+@font-face {
+font-family: HeyComic;
+src: url(../FONT/Hey%20Comic.ttf);
+}
+@font-face {  
+font-family: Glitch;
+src: url(../FONT/MinecraftEvenings-RBao.ttf);
+}
+body {
+margin: 0;
+z-index:20;
+height: 100vh;
+width: 100vw;
+overflow: hidden;
+font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+-webkit-font-smoothing: antialiased;
+background-size: 100% 100%;
+background-repeat: no-repeat;
+background-image: url('https://webtama.github.io/WebAppJp05/IMG/PosterBCG.png');
+overflow: hidden;
+animation-name: skywave;
+animation-duration: 120s;
+animation-iteration-count: infinite;
+background-blend-mode: multiply;
+}
+ 
+@keyframes skywave {
+0%  {background-color: rgb(135, 206, 250, 0.5);}
+20%   {background-color: rgb(135, 206, 250, 1)}
+30%   {background-color: rgb(135, 206, 250, 0.5)}
+40%  {background-color: rgb(255, 165, 0, 0.5)}
+50%  {background-color: rgb(25, 25, 112, 1)}
+60%  {background-color: rgb(0, 0, 0, 0.95)}
+80%  {background-color: rgb(0, 0, 0, 0.9)5}
+95%  {background-color: rgb(25, 25, 112, 1)}
+100% {background-color: rgb(135, 206, 250, 0.5)}
+}
+#airplane{
+position: absolute; 
+display: block; 
+z-index: 100;  
+left: 0%;
+animation-name: airplanego;
+animation-duration: 30s;
+animation-iteration-count: infinite;
+-webkit-transform: scaleX(-1);
+transform: scaleX(-1);
+cursor: pointer;
+}
+
+#awan {
+animation-name: awango;
+animation-duration: 120s;
+animation-iteration-count: infinite;
+width: 90vw;
+position: absolute; 
+display: block; 
+z-index: 10;
+height:40vh; 
+top: 5%; 
+}
+
+#birdgo {
+position: absolute; 
+display: block; 
+z-index: 100;  
+animation-name: birdgo;
+animation-duration: 120s;
+animation-iteration-count: infinite;
+}
+  
+@keyframes airplanego {
+0%   	{left: calc(0% + 0px); top: 30%; width: 0px;}
+20%  	{top: 10%;}
+40%  	{opacity: 1;}
+60%  	{left: calc(100% - 200px); width: 200px;}
+65%  	{transform: scaleX(-1);}
+66%  	{left: calc(100% - 200px); top: 10%; width: 200px; transform: scaleX(1);}
+80%  	{opacity: 1;}
+80%   {top: 10%;}
+95%   {left: calc(0% + 0px); top: 30%; width: 0px;transform: scaleX(1);}
+99%   {left: calc(0% + 0px); top: 30%; width: 0px;transform: scaleX(1);}
+100%  {left: calc(0% + 0px); top: 30%; width: 0px;transform: scaleX(-1);}
+}
+
+@keyframes awango {
+0%   {right: 0%; opacity: 1;}
+25%  {right: calc(100% - 90vw);}
+75%   {opacity: 0;}
+100% {right: 0%;}
+} 
+
+@keyframes birdgo {
+0%   {top: 3vh; right: 0%; opacity: 0; width: 150px;}
+25%   {top: 3vh; right: 0%; opacity: 0; width: 150px;}
+26%   {top: 3vh; right: 0%; opacity: 1; width: 150px;}
+55%  {top: 40vh;right: calc(100% - 0px); opacity: 0; width: 0px;}
+56%  {right: 0%; opacity: 0; width: 0px;}
+100% {right: 0%; opacity: 0; width: 0px;}
+} 
+ 
+#loginjudul {
+text-align: center;
+width: 100vw;
+padding: auto;
+position: absolute;
+top: 5vh;
+font-family: HeyComic;
+font-size:46px;
+-webkit-text-stroke-width: 2px;
+-webkit-text-stroke-color: black;
+color: rgb(255, 255, 255, 0.7);
+line-height: 1;
+text-shadow: 2px 3px black;
+padiing-bottom: 0px;
+z-index: 100;  
+}
+  
+#sunny { 
+width: 200px;
+height: 200px; 
+position: absolute; 
+z-index: -1;
+animation-name: sunnygo;
+animation-duration: 120s;
+animation-iteration-count: infinite;
+}
+  
+@keyframes sunnygo {
+0%   {top: 30vh; right: 0%; background: radial-gradient(#f9d71c 20%, yellow 20%, transparent 50%);opacity: 0;}
+25%  {top: -5vh; right: calc(50% - 100px); background: radial-gradient(#f9d71c 20%, yellow 20%, transparent 50%);opacity: 1;}
+50%  {top: 30vh; right: calc(100% - 200px); background: radial-gradient(#f9d71c 20%, yellow 20%, transparent 50%);opacity: 0;}
+51%  {top: 30vh; right: calc(100% - 200px); background: radial-gradient(#FAF9E6 20%, white 20%, transparent 50%);opacity: 0;}
+75%  {top: -5vh; right: calc(50% - 100px); background: radial-gradient(#FAF9E6 20%, white 20%, transparent 50%);opacity: 1;}
+99% {top: 30vh; right: 0%; background: radial-gradient(#FAF9E6 20%, white 20%,transparent 50%);opacity: 0;}
+100% {top: 30vh; right: 0%; background: radial-gradient(#f9d71c 20%, yellow 20%, transparent 50%);opacity: 0;}
+} 
+</style>
+	  
+</head>
+	
+<body>
+<audio autoplay loop  id="playAudio" style="display:none">
+    <source src="../SOUND/Blue.mp3">
+</audio>
+  
+<iframe src="../SOUND/Blue.mp3" loop="true" allow="autoplay" style="display:none" id="iframeAudio" loop></iframe>   
+<script>
+function goBack() {
+  window.history.back();
+}
+</script> 
+	
+<script>
+  var isChrome = /Chrome/.test(navigator.userAgent) && /Google Inc/.test(navigator.vendor);
+    if(!isChrome){
+      $('#iframeAudio').remove()
+    }
+  else{
+     $('#playAudio').remove() //just to make sure that it will not have 2x audio in the background 
+  }  
+</script>	
+    <div><p id="loginjudul">SDN Jatipadang 05 Pagi<br>..OFFLINE..</p><br>Klik Pesawat untuk 💻 Kembali Login</div>
+    <div id="sunny"></div>
+    <img src="../IMG/birdgo.gif" name="birdgo" id="birdgo" />
+    <img id="airplane" src="../IMG/airplane.gif" onclick="goBack();"/>
+    <img id="awan" src="../IMG/awan.png"/>
+<div style="width: 100%; text-align: center; font-size:12px; bottom: 0vh; position: absolute; color:#FFFFFF;">
+    <img src="../icons/160x160.png" alt="logo" width="30" height="30"  style="margin-left: auto;margin-right: auto;"><br>
+    Copyright by Maskibow on PsyChOgRaPiCs
+</div>
+</body>
+</html>

@@ -142,7 +142,7 @@ workbox.routing.registerRoute(
     cacheName: HTML_CACHE,
     plugins: [
       new workbox.expiration.ExpirationPlugin({
-        maxEntries: 200,
+        maxEntries: 20,
       }),
     ],
   })
@@ -154,7 +154,7 @@ workbox.routing.registerRoute(
     cacheName: JS_CACHE,
     plugins: [
       new workbox.expiration.ExpirationPlugin({
-        maxEntries: 200,
+        maxEntries: 20,
       }),
     ],
   })
@@ -166,7 +166,7 @@ workbox.routing.registerRoute(
     cacheName: STYLE_CACHE,
     plugins: [
       new workbox.expiration.ExpirationPlugin({
-        maxEntries: 200,
+        maxEntries: 20,
       }),
     ],
   })
@@ -178,7 +178,7 @@ workbox.routing.registerRoute(
     cacheName: IMAGE_CACHE,
     plugins: [
       new workbox.expiration.ExpirationPlugin({
-        maxEntries: 200,
+        maxEntries: 20,
       }),
     ],
   })
@@ -190,7 +190,7 @@ workbox.routing.registerRoute(
     cacheName: ICON_CACHE,
     plugins: [
       new workbox.expiration.ExpirationPlugin({
-        maxEntries: 200,
+        maxEntries: 20,
       }),
     ],
   })
@@ -202,7 +202,7 @@ workbox.routing.registerRoute(
     cacheName: IMAGE_CACHE,
     plugins: [
       new workbox.expiration.ExpirationPlugin({
-        maxEntries: 200,
+        maxEntries: 20,
       }),
     ],
   })
@@ -214,7 +214,7 @@ workbox.routing.registerRoute(
     cacheName: JQUERY_CACHE,
     plugins: [
       new workbox.expiration.ExpirationPlugin({
-        maxEntries: 200,
+        maxEntries: 20,
       }),
     ],
   })
@@ -226,7 +226,7 @@ workbox.routing.registerRoute(
     cacheName: SOUND_CACHE,
     plugins: [
       new workbox.expiration.ExpirationPlugin({
-        maxEntries: 200,
+        maxEntries: 20,
       }),
     ],
   })
@@ -249,7 +249,7 @@ workbox.routing.registerRoute(
   new workbox.strategies.CacheFirst({
     cacheName: CACHE,
     plugins: [
-      new workbox.cacheableResponse.CacheableResponsePlugin({statuses: [200]}),
+      new workbox.cacheableResponse.CacheableResponsePlugin({statuses: [20]}),
       new workbox.rangeRequests.RangeRequestsPlugin(),
     ],
   }),

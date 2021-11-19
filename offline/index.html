@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="theme-color" content="#3f51b5">
-    <link rel="manifest" href="/WebAppJp05/manifest.json">
+    <link rel="manifest" href="/manifest.json">
 <style>
 @media screen and (max-width: 950px) {  
   body {background-size: cover;}
@@ -14,11 +14,11 @@
   
 @font-face {
 font-family: HeyComic;
-src: url(../FONT/Hey%20Comic.ttf);
+src: url(/FONT/Hey%20Comic.ttf);
 }
 @font-face {  
 font-family: Glitch;
-src: url(../FONT/MinecraftEvenings-RBao.ttf);
+src: url(/FONT/MinecraftEvenings-RBao.ttf);
 }
 body {
 margin: 0;
@@ -30,7 +30,7 @@ font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, A
 -webkit-font-smoothing: antialiased;
 background-size: 100% 100%;
 background-repeat: no-repeat;
-background-image: url('https://webtama.github.io/WebAppJp05/IMG/PosterBCG.png');
+background-image: url('/IMG/PosterBCG.png');
 overflow: hidden;
 animation-name: skywave;
 animation-duration: 120s;
@@ -141,13 +141,13 @@ animation-iteration-count: infinite;
 }
   
 @keyframes sunnygo {
-0%   {top: 30vh; right: 0%; background: radial-gradient(#f9d71c 20%, yellow 20%, transparent 50%);opacity: 0;}
-25%  {top: -5vh; right: calc(50% - 100px); background: radial-gradient(#f9d71c 20%, yellow 20%, transparent 50%);opacity: 1;}
-50%  {top: 30vh; right: calc(100% - 200px); background: radial-gradient(#f9d71c 20%, yellow 20%, transparent 50%);opacity: 0;}
-51%  {top: 30vh; right: calc(100% - 200px); background: radial-gradient(#FAF9E6 20%, white 20%, transparent 50%);opacity: 0;}
-75%  {top: -5vh; right: calc(50% - 100px); background: radial-gradient(#FAF9E6 20%, white 20%, transparent 50%);opacity: 1;}
-99% {top: 30vh; right: 0%; background: radial-gradient(#FAF9E6 20%, white 20%,transparent 50%);opacity: 0;}
-100% {top: 30vh; right: 0%; background: radial-gradient(#f9d71c 20%, yellow 20%, transparent 50%);opacity: 0;}
+0%   {top: 20vh; right: 0%; background: radial-gradient(#f9d71c 20%, yellow 20%, transparent 50%);opacity: 0;}
+25%  {top: 0vh; right: calc(50% - 100px); background: radial-gradient(#f9d71c 20%, yellow 20%, transparent 50%);opacity: 1;}
+50%  {top: 20vh; right: calc(100% - 200px); background: radial-gradient(#f9d71c 20%, yellow 20%, transparent 50%);opacity: 0;}
+51%  {top: 20vh; right: calc(100% - 200px); background: radial-gradient(#FAF9E6 20%, white 20%, transparent 50%);opacity: 0;}
+75%  {top: 0vh; right: calc(50% - 100px); background: radial-gradient(#FAF9E6 20%, white 20%, transparent 50%);opacity: 1;}
+99% {top: 20vh; right: 0%; background: radial-gradient(#FAF9E6 20%, white 20%,transparent 50%);opacity: 0;}
+100% {top: 20vh; right: 0%; background: radial-gradient(#f9d71c 20%, yellow 20%, transparent 50%);opacity: 0;}
 } 
 </style>
 	  
@@ -174,14 +174,15 @@ function goBack() {
      $('#playAudio').remove() //just to make sure that it will not have 2x audio in the background 
   }  
 </script>	
-    <div><p id="loginjudul">SDN Jatipadang 05 Pagi<br>..OFFLINE..</p><br>Klik Pesawat untuk 💻 Kembali Login</div>
+    <div><p id="loginjudul">SDN Jatipadang 05 Pagi<br>..OFFLINE..</p></div>
     <div id="sunny"></div>
-    <img src="../IMG/birdgo.gif" name="birdgo" id="birdgo" />
-    <img id="airplane" src="../IMG/airplane.gif" onclick="goBack();"/>
-    <img id="awan" src="../IMG/awan.png"/>
+    <img src="/IMG/birdgo.gif" name="birdgo" id="birdgo" />
+    <img id="airplane" src="/IMG/airplane.gif" onclick="goBack();"/>
+    <img id="awan" src="/IMG/awan.png"/>
 <div style="width: 100%; text-align: center; font-size:12px; bottom: 0vh; position: absolute; color:#FFFFFF;">
-    <img src="../icons/160x160.png" alt="logo" width="30" height="30"  style="margin-left: auto;margin-right: auto;"><br>
-    Copyright by Maskibow on PsyChOgRaPiCs
+    <img src="/icons/160x160.png" alt="logo" width="30" height="30"  style="margin-left: auto;margin-right: auto;"><br>
+    Copyright by Maskibow on PsyChOgRaPiCs<br>
+	Klik Pesawat untuk 💻 Kembali Login
 </div>
 </body>
 </html>

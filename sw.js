@@ -37,7 +37,7 @@ importScripts('/JS/workbox-sw.js');
 const CACHE = "CACHE_OFFLINE_WEBAPP";
 
 // TODO: replace the following with the correct offline fallback page i.e.: const offlineFallbackPage = "/offline/";
-const offlineFallbackPage = "/offline/";
+const offlineFallbackPage = "/";
 
 self.addEventListener("message", (event) => {
   if (event.data && event.data.type === "SKIP_WAITING") {
@@ -254,24 +254,3 @@ workbox.routing.registerRoute(
     ],
   }),
 );
-
-// This is try in firefox service worker
-
-self.addEventListener('install', function(event) {
-  event.waitUntil(
-    caches.open('CACHE_NAME').then(function(cache) {
-      return CACHE_NAME.addAll([
-        '/',
-        '/CSS/',
-        '/FONT/',
-        '/HTML/',
-        '/IMG/',
-        '/JQUERY/',
-        '/JS/',
-        '/SOUND/',
-        '/offline/',
-        '/icons/'
-      ]);
-    })
-  );
-});

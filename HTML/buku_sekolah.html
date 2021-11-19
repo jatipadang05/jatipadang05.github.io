@@ -1,0 +1,21 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<body class="textpin" onload="getAllDataBUKUGURU();">
+
+Buku Siswa : <input class="form-control noprint" type="text" id="mybuku" onkeydown="myFunctionnbuku();" placeholder="Cari Buku" title="Cari Buku Kelas" style="display: none;">
+<select id="getbuku" onChange='document.getElementById("mybuku").value = this.value;myFunctionnbuku();'>
+  <option value="xxxx"></option>
+  <option value="Kelas 01">Kelas 01</option>
+  <option value="Kelas 02">Kelas 02</option>
+  <option value="Kelas 03">Kelas 03</option>
+  <option value="Kelas 04">Kelas 04</option>
+  <option value="Kelas 05">Kelas 05</option>
+  <option value="Kelas 06">Kelas 06</option>
+</select>
+<br/><br/>
+<div id="dataTableBUKUGURU" class="table-responsive" style="font-size:12px;">
+  <!-- The Data Table is inserted here by JavaScript -->
+</div>
+
+</body>
+</html>

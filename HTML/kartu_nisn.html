@@ -1,0 +1,182 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CETAK NISN</title>
+<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.3/jspdf.min.js"></script>
+<script src="https://html2canvas.hertzen.com/dist/html2canvas.js"></script>
+<script>   
+	function getPDF(){
+
+		var HTML_Width = $(".canvas_div_pdf").width();
+		var HTML_Height = $(".canvas_div_pdf").height();
+		var top_left_margin = 15;
+		var PDF_Width = HTML_Width+(top_left_margin*2);
+		var PDF_Height = (PDF_Width*1.5)+(top_left_margin*2);
+		var canvas_image_width = HTML_Width;
+		var canvas_image_height = HTML_Height;
+		
+		var totalPDFPages = Math.ceil(HTML_Height/PDF_Height)-1;
+		
+
+		html2canvas($(".canvas_div_pdf")[0],{allowTaint:true}).then(function(canvas) {
+			canvas.getContext('2d');
+			
+			console.log(canvas.height+"  "+canvas.width);
+			
+			
+			var imgData = canvas.toDataURL("image/jpeg", 1.0);
+			var pdf = new jsPDF('p', 'pt',  [PDF_Width, PDF_Height]);
+		    pdf.addImage(imgData, 'PNG', top_left_margin, top_left_margin,canvas_image_width,canvas_image_height);
+			
+			
+			for (var i = 1; i <= totalPDFPages; i++) { 
+				pdf.addPage(PDF_Width, PDF_Height);
+				pdf.addImage(imgData, 'PNG', top_left_margin, -(PDF_Height*i)+(top_left_margin*4),canvas_image_width,canvas_image_height);
+			}
+			
+		    pdf.save("KARTU-NISN.pdf");
+        });
+	};
+</script>
+<style>
+.kartunisn, .canvas_div_pdf{
+width: 900px;
+height: 300px;
+}	
+.kartunisn{
+font-family: Arial, sans-serif;
+background-image: url("https://webappschools.github.io/img/KARTU-NISN.jpg") !important;
+background-size: 100% 100% !important;
+font-weight: normal !important; 
+font-size:13px;
+padding-left: 15px;
+position:relative;
+top: 0px;
+}
+body {
+padding:20px;
+}
+			
+.qr-btn {
+background-color:#8c52ff;
+padding:8px;
+color:white;
+cursor:pointer;
+}
+#qr-code{
+position: absolute;
+top: 85px;
+right: 30px;
+}
+div {font-size: 12px; }
+</style>
+</head>
+<body  onload="generateQRCode();" class="textpin">
+<div class="canvas_div_pdf">
+<table class="kartunisn">
+  <tr>
+    <th scope="col" width="50%" >&nbsp;</th>
+    <th scope="col" width="50%" >
+    <table width="100%" border="0">
+  <tr>
+    <th width="32%" style="padding-top: 80px;" scope="col"><div align="left">N I S N</div></th>
+    <th width="3%" style="padding-top: 80px;" align="center" valign="middle" nowrap="nowrap" scope="col">:</th>
+    <th width="auto" style="padding-top: 80px;" scope="col"><div align="left" id="nisn" class="nisn"></div></th>
+  </tr>
+  <tr>
+    <th scope="row"><div align="left">Nama</div></th>
+    <td>:</td>
+    <td><div align="left" id="namanisn"></div></td>
+  </tr>
+  <tr>
+    <th scope="row"><div align="left">Tempat Lahir</div></th>
+    <td>:</td>
+    <td><div align="left" id="ttlnisn"></div></td>
+  </tr>
+  <tr>
+    <th scope="row"><div align="left">Tanggal Lahir</div></th>
+    <td>:</td>
+    <td><div align="left" id="tglnisn"></div></td>
+  </tr>
+  <tr>
+    <th scope="row"><div align="left">Jenis Kelamin</div></th>
+    <td>:</td>
+    <td><div align="left" id="jknisn"></div></td>
+  </tr>
+</table>
+<canvas id="qr-code"></canvas>
+<table width="100%" border="0">
+  <tr>
+  <td width="50%" scope="col"></td>
+  	 <td width="50%" scope="col"><div align="left" class="style4">
+      <div align="center">Jakarta, 30 September 2021</div>
+    </div></td>
+  </tr>
+  <tr>
+  <td width="50%" scope="col"></td>
+    <td><div align="left" class="style4">
+      <div align="center">Kepala SDN Jatipadang 0 5 Pagi</div>
+    </div></td>
+  </tr>
+  <tr>
+  <td width="50%" scope="col"></td>
+    <td><div align="left" class="style4">
+      <div align="center">ttd</div>
+    </div></td>
+  </tr>
+  <tr>
+  <td width="50%" scope="col"></td>
+    <td><div align="left" class="style4">
+      <div align="center">Merida Gultom S.Pd<br />
+        NIP.196206141982062002 </div>
+    </div></td>
+  </tr>
+</table>
+
+</th>
+  </tr>
+</table>
+
+</div>
+<input id="qr-text" style="display: none;"/>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrious/4.0.2/qrious.min.js"></script>
+<script>
+/* JS comes here */
+var qr;
+(function() {
+var qrtext = document.getElementById("qr-text").value;
+qr = new QRious({
+element: document.getElementById('qr-code'),
+background: 'transparent',
+foreground: 'black',
+size: 90,
+value: qrtext
+});
+})();
+            
+function generateQRCode() {
+document.getElementById("qr-text").value = "";
+document.getElementById("nisn").innerHTML = document.getElementById("NISN").value;
+document.getElementById("namanisn").innerHTML = document.getElementById("USERNAME").value;
+document.getElementById("ttlnisn").innerHTML = document.getElementById("TEMPAT_LAHIR").value;	
+document.getElementById("tglnisn").innerHTML = document.getElementById("TGL_LAHIR").value;
+document.getElementById("jknisn").innerHTML = document.getElementById("JK").value;	
+document.getElementById("qr-text").value = "N I S N : " + document.getElementById("nisn").innerHTML + ", Nama Siswa : " + document.getElementById("namanisn").innerHTML  + ", Tempat Lahir : " + document.getElementById("ttlnisn").innerHTML + ", Tanggal Lahir : " + document.getElementById("tglnisn").innerHTML + ", Jenis Kelamin : " + document.getElementById("jknisn").innerHTML;
+
+var qrtext = document.getElementById("qr-text").value;
+qr.set({
+background: 'transparent',
+foreground: 'black',
+size: 90,
+value: qrtext
+});
+}
+</script>
+<button class="mkb-button" onclick="generateQRCode();">Tarik Nama</button>	
+<button class="mkb-button" onclick="getPDF();">Download</button>
+
+</body>
+</html>

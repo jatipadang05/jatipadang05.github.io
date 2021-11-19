@@ -4,7 +4,7 @@ var URLS = '.';
 
 const NOT_FOUND_CACHE_FILES = '/404.html';
 const CACHE_NAME = 'CACHE_OFFLINE_WEBAPP';
-const OFFLINE_URL = '/offline/index.html';
+const OFFLINE_URL = '/';
 const NOT_FOUND_URL = '/404.html';
 
 self.addEventListener('fetch', function(event) {
@@ -37,7 +37,7 @@ importScripts('/JS/workbox-sw.js');
 const CACHE = "CACHE_OFFLINE_WEBAPP";
 
 // TODO: replace the following with the correct offline fallback page i.e.: const offlineFallbackPage = "/offline/";
-const offlineFallbackPage = "/offline/index.html";
+const offlineFallbackPage = "/offline/";
 
 self.addEventListener("message", (event) => {
   if (event.data && event.data.type === "SKIP_WAITING") {

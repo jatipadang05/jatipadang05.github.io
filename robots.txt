@@ -1,0 +1,10 @@
+User-agent: *
+Allow: /
+Disallow: /css/
+Disallow: /font/
+Disallow: /icon/
+Disallow: /img/
+Disallow: /js/
+Disallow: /jp05/
+Disallow: /blog/
+Allow: /blog/post/

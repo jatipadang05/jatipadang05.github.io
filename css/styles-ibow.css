@@ -1,0 +1,52 @@
+.blog-sidebar, aside, .lbl-CommentsDisabled, .post-author, .post-category {
+display:none!important; 
+width:0px!important;
+}﻿
+.blog-content {
+width: 100%;
+}
+#aspnetForm, .container{
+background-color: transparent;
+}
+html {
+background-image: url("http://jatipadang05.web.id/img/banner_bg.jpg");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center; 
+}
+
+iframe, html, .ltr{
+background-color:transparent;
+}
+
+.blog-wrapper {
+margin-top: 80px;
+margin-bottom: 80px;
+width: 100%;
+padding: 10px 20px 10px 20px;
+border: 2px solid transparent;
+border-radius: 25px;
+background-color:rgb(0, 0, 0, .7);
+color:#FFFFFF!important;
+font-size: 14px!important;
+}
+.post-body p {
+color:#FFFFFF!important;
+font-size: 16px!important;
+}
+footer{
+margin-bottom: 0px;
+background-color:rgb(0, 0, 0, .7);
+}
+.post-header {
+padding-bottom: 20px;
+}
+.post-date {
+color:orange!important;
+}
+.post-title a{
+color:red!important;
+}
+i {color:#FF9900;}
+
+.well-global-title {color:grey!important;font-size: 14px!important;}

@@ -3,7 +3,7 @@
  "short_name": "SDN Jatipadang 05 Pagi",
  "description": "Aplikasi Database SDN Jatipadang 05 Pagi",
  "lang": "id-ID",
- "start_url": ".",
+ "start_url": "/",
  "dir": "ltr",
  "theme_color": "#000000",
  "background_color": "#000000",

@@ -36,8 +36,8 @@ importScripts('/js/workbox-sw.js');
 
 const CACHE = "CACHE_OFFLINE_WEBAPP";
 
-// TODO: replace the following with the correct offline fallback page i.e.: const offlineFallbackPage = "/";
-const offlineFallbackPage = "/";
+// TODO: replace the following with the correct offline fallback page i.e.: const offlineFallbackPage = "index.html";
+const offlineFallbackPage = "index.html";
 
 self.addEventListener("message", (event) => {
   if (event.data && event.data.type === "SKIP_WAITING") {

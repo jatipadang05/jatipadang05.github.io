@@ -1,10 +1,10 @@
 var APP_PREFIX = 'WebAppJp05_';
 var VERSION = 'version_01';
-var URLS = '.';
+var URLS = '/';
 
 const NOT_FOUND_CACHE_FILES = '/';
 const CACHE_NAME = 'CACHE_OFFLINE_WEBAPP';
-const OFFLINE_URL = '.';
+const OFFLINE_URL = '/';
 const NOT_FOUND_URL = '/\';
 
 self.addEventListener('fetch', function(event) {

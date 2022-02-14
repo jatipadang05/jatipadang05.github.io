@@ -1,11 +1,11 @@
-var APP_PREFIX = 'WebAppJp05_';
-var VERSION = 'version_01';
-var URLS = '/';
+var APP_PREFIX = 'App_JP05';
+var VERSION = 'version_02';
+var URLS = '.';
 
-const NOT_FOUND_CACHE_FILES = '/';
-const CACHE_NAME = 'CACHE_OFFLINE_WEBAPP';
-const OFFLINE_URL = '/';
-const NOT_FOUND_URL = '/\';
+const NOT_FOUND_CACHE_FILES = '/index.html';
+const CACHE_NAME = 'CACHE_OFFLINE_APP_JP05';
+const OFFLINE_URL = '/index.html';
+const NOT_FOUND_URL = '/index.html';
 
 self.addEventListener('fetch', function(event) {
   // console.log('[Service Worker] Fetch', event.request.url);
@@ -34,10 +34,10 @@ self.addEventListener('fetch', function(event) {
 
 importScripts('https://storage.googleapis.com/workbox-cdn/releases/5.1.2/workbox-sw.js');
 
-const CACHE = "CACHE_OFFLINE_WEBAPP";
+const CACHE = "CACHE_OFFLINE_APP_JP05";
 
-// TODO: replace the following with the correct offline fallback page i.e.: const offlineFallbackPage = "index.html";
-const offlineFallbackPage = "index.html";
+// TODO: replace the following with the correct offline fallback page i.e.: const offlineFallbackPage = "/offline/";
+const offlineFallbackPage = "/index.html";
 
 self.addEventListener("message", (event) => {
   if (event.data && event.data.type === "SKIP_WAITING") {
@@ -93,7 +93,7 @@ const bgSyncPlugin = new workbox.backgroundSync.BackgroundSyncPlugin(QUEUE_NAME,
 });
 
 workbox.routing.registerRoute(
-  new RegExp('.'),
+  new RegExp('/*'),
   new workbox.strategies.StaleWhileRevalidate({
     cacheName: CACHE,
     plugins: [
@@ -112,7 +112,7 @@ self.addEventListener("message", (event) => {
 });
 
 workbox.routing.registerRoute(
-  new RegExp('.'),
+  new RegExp('/*'),
   new workbox.strategies.CacheFirst({
     cacheName: CACHE
   })
@@ -122,9 +122,9 @@ workbox.routing.registerRoute(
 //This is the service worker with the Advanced caching
 
 const HTML_CACHE = "html";
-const JS_CACHE = "javascript";
-const STYLE_CACHE = "stylesheets";
-const IMAGE_CACHE = "images";
+const JS_CACHE = "js";
+const STYLE_CACHE = "css";
+const IMAGE_CACHE = "img";
 const FONT_CACHE = "fonts";
 const ICON_CACHE = "icons";
 const JQUERY_CACHE = "JQUERY";
@@ -137,7 +137,7 @@ self.addEventListener("message", (event) => {
 });
 
 workbox.routing.registerRoute(
-  ({event}) => event.request.destination === 'html',
+  ({event}) => event.request.destination === 'HTML',
   new workbox.strategies.NetworkFirst({
     cacheName: HTML_CACHE,
     plugins: [
@@ -149,7 +149,7 @@ workbox.routing.registerRoute(
 );
 
 workbox.routing.registerRoute(
-  ({event}) => event.request.destination === 'js',
+  ({event}) => event.request.destination === 'JS',
   new workbox.strategies.StaleWhileRevalidate({
     cacheName: JS_CACHE,
     plugins: [
@@ -161,7 +161,7 @@ workbox.routing.registerRoute(
 );
 
 workbox.routing.registerRoute(
-  ({event}) => event.request.destination === 'css',
+  ({event}) => event.request.destination === 'CSS',
   new workbox.strategies.StaleWhileRevalidate({
     cacheName: STYLE_CACHE,
     plugins: [
@@ -173,7 +173,7 @@ workbox.routing.registerRoute(
 );
 
 workbox.routing.registerRoute(
-  ({event}) => event.request.destination === 'img',
+  ({event}) => event.request.destination === 'IMG',
   new workbox.strategies.StaleWhileRevalidate({
     cacheName: IMAGE_CACHE,
     plugins: [
@@ -185,7 +185,7 @@ workbox.routing.registerRoute(
 );
 
 workbox.routing.registerRoute(
-  ({event}) => event.request.destination === 'font',
+  ({event}) => event.request.destination === 'FONT',
   new workbox.strategies.StaleWhileRevalidate({
     cacheName: ICON_CACHE,
     plugins: [
@@ -208,9 +208,20 @@ workbox.routing.registerRoute(
   })
 );
 
+workbox.routing.registerRoute(
+  ({event}) => event.request.destination === 'JQUERY',
+  new workbox.strategies.StaleWhileRevalidate({
+    cacheName: JQUERY_CACHE,
+    plugins: [
+      new workbox.expiration.ExpirationPlugin({
+        maxEntries: 20,
+      }),
+    ],
+  })
+);
 
 workbox.routing.registerRoute(
-  ({event}) => event.request.destination === 'sound',
+  ({event}) => event.request.destination === 'SOUND',
   new workbox.strategies.StaleWhileRevalidate({
     cacheName: SOUND_CACHE,
     plugins: [

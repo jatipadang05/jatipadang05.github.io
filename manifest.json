@@ -70,10 +70,8 @@
     "platform": "wide",
     "label": "Aplikasi Database SDN Jatipadang 05 Pagi"
   }],
-  "splash_pages": null
-}
-
-"shortcuts" : [
+  "splash_pages": null,
+ "shortcuts" : [
   {
     "name": "Home",
     "url": "/index.html",
@@ -83,4 +81,6 @@
     "name": "Halaman",
     "url": "/pages/"
   },
-]
+],
+}
+

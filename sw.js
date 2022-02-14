@@ -254,3 +254,7 @@ workbox.routing.registerRoute(
     ],
   }),
 );
+
+async function requestBackgroundSync() {
+    await self.registration.sync.register('App_JP05');
+}

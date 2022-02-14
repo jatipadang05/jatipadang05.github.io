@@ -72,3 +72,15 @@
   }],
   "splash_pages": null
 }
+
+"shortcuts" : [
+  {
+    "name": "Home",
+    "url": "/index.html",
+    "description": "Halaman Utama SDN Jatipadang 05 Pagi"
+  },
+  {
+    "name": "Halaman",
+    "url": "/pages/"
+  },
+]

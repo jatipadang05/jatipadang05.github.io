@@ -79,7 +79,8 @@
   },
   {
     "name": "Halaman",
-    "url": "/pages/"
-  },
-],
+    "url": "/pages/",
+    "description": "Halaman Utama SDN Jatipadang 05 Pagi"
+  }
+]
 }

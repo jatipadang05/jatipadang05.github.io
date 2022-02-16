@@ -1,7 +1,7 @@
 .blog-sidebar, aside, .lbl-CommentsDisabled, .post-author, .post-category {
 display:none!important; 
 width:0px!important;
-}﻿
+}
 .blog-content {
 width: 100%;
 }
@@ -20,7 +20,7 @@ iframe, html, .ltr{
 background-color:transparent;
 }
 
-body {
+#Blog1 body {
 margin-top: 80px;
 margin-bottom: 80px;
 width: 100%;

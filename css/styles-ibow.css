@@ -7,7 +7,7 @@ background-image: url("http://jatipadang05.web.id/img/banner_bg.jpg");
 }
 
 footer{
-margin-bottom: 0px;
+margin-bottom: 0px!important;
 background-color:rgb(0, 0, 0, .7);
 }
 

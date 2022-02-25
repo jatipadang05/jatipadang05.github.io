@@ -90,7 +90,7 @@ appCache.addEventListener("cached", function(event) {
 
 </head>
 
-<body>
+<body itemscope itemtype="https://schema.org/Organization">
     <div class="header">
         <div class="container">
             <nav class="navbar navbar-inverse" role="navigation">
@@ -118,11 +118,11 @@ appCache.addEventListener("cached", function(event) {
     </div>
     <!--/.header-->
 
-    <div class="parallax-content baner-content" id="home" itemscope itemtype="https://schema.org/Organization">
+    <div class="parallax-content baner-content" id="home">
         <div class="container">
             <div class="text-content">
                 <h2 itemprop="name"><em>SD NEGERI</em> <span> JATIPADANG 05 </span> Pagi</h2>
-                <p itemprop="address">Jalan Raya Ragunan No. 40, RT.014 RW.002 Kelurahan Jati Padang Kecamatan Pasar Minggu Jakarta-Selatan Daerah Khusus Ibu Kota Jakarta Kode Pos 12540</p>
+                <p>Jalan Raya Ragunan No. 40, RT.014 RW.002 Kelurahan Jati Padang Kecamatan Pasar Minggu Jakarta-Selatan Daerah Khusus Ibu Kota Jakarta Kode Pos 12540</p>
                 <div class="primary-white-button">
                     <a href="#" class="scroll-link" data-id="contact-us">Login/Masuk <i class="fa fa-sign-in"></i></a>
                 </div>
@@ -367,11 +367,12 @@ appCache.addEventListener("cached", function(event) {
                     </div>
                 </div>
                 <div class="col-md-4 col-sm-12" style="padding:1px;">
-                    <div class="location">
+                    <div class="location" itemprop="address" itemscope itemtype="https://schema.org/PostalAddress">
                         <h4>Alamat/Lokasi</h4>
                         <ul>
                             <li itemprop="streetAddress">Jl. Raya Ragunan No. 40<br>RT. 014, RW.002<br>Kelurahan Jati Padang</li>
                             <li itemprop="addressLocality">Kec. Pasar Minggu, <br>Jakarta Selatan<br>DKI Jakarta</li>
+			    <li itemprop="postalCode">12540</li>
                         </ul>
                     </div>
                 </div>
